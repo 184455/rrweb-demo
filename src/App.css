@@ -1,10 +1,22 @@
 .App {
   text-align: center;
+  display: flex;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+.player-wrap {
+  position: relative;
+  width: 50%;
+  flex: 0 0 50%;
+}
+
+.operation {
+  position: absolute;
+  right: 100px;
+  bottom: 100px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
