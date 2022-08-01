@@ -1,15 +1,19 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React from "react"
+import { Routes, Route } from "react-router-dom"
+import Operation from './components/operation'
 import Home from './pages/Home'
-import Record from './pages/Record'
+import Debugger from './pages/Debugger'
 import Play from './pages/Play'
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" exact element={<Home />} />
-      <Route path="/record" exact element={<Record />} />
-      <Route path="/play" exact element={<Play />} />
-    </Routes>
+    <>
+      <Operation />
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/debugger" exact element={<Debugger />} />
+        <Route path="/play/:recordId" exact element={<Play />} />
+      </Routes>
+    </>
   );
 }

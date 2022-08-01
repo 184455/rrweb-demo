@@ -10,7 +10,7 @@ const events = [];
 let stopFn;
 let player;
 
-export default function Record() {
+export default function Debugger() {
   const handleRecord = () => {
     stopFn = record({
       emit(event) {

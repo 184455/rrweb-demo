@@ -1,3 +1,21 @@
+html,
+body,
+div,
+p,
+ul,
+li,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #5588aa;
+}
+
 .App {
   text-align: center;
   display: flex;
@@ -47,4 +65,40 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.hover-under-line {
+  background-color: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+.hover-under-line:hover {
+  background-color: #fafafa;
+}
+.hover-under-line:nth-child(even) {
+  background-color: #fafafa;
+}
+.hover-under-line:last-child {
+  border: none;
+}
+
+.operation-btn-wrap {
+  position: fixed;
+  right: 50px;
+  bottom: 100px;
+}
+.operation-btn-wrap > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  width: 60px;
+}
+.recording-icon {
+  display: inline-block;
+  height: 5px;
+  width: 5px;
+  margin-right: 7px;
+  background-color: red;
+  border-radius: 100%;
+  box-shadow: 0 0 0 2px white, 0 0 0 3px red;
 }
