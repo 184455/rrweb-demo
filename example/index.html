@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rrweb Demo</title>
+
+  <style>
+    .replayer-wrapper {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <h3>一个简单版本的 rrweb demo</h3>
+  <div id="RrwebPlayerRoot" />
+
+  <script>
+    // 渲染数据
+    var _eventsString =
+      '[{"type":4,"data":{"href":"http://localhost:3030/record","width":1920,"height":444},"timestamp":1659076467530},{"type":2,"data":{"node":{"type":0,"childNodes":[{"type":1,"name":"html","publicId":"","systemId":"","id":2},{"type":2,"tagName":"html","attributes":{"lang":"en"},"childNodes":[{"type":2,"tagName":"head","attributes":{},"childNodes":[{"type":3,"textContent":"\\n    ","id":5},{"type":2,"tagName":"meta","attributes":{"charset":"utf-8"},"childNodes":[],"id":6},{"type":3,"textContent":"\\n    ","id":7},{"type":2,"tagName":"link","attributes":{"rel":"icon","href":"http://localhost:3030/favicon.ico"},"childNodes":[],"id":8},{"type":3,"textContent":"\\n    ","id":9},{"type":2,"tagName":"meta","attributes":{"name":"viewport","content":"width=device-width, initial-scale=1"},"childNodes":[],"id":10},{"type":3,"textContent":"\\n    ","id":11},{"type":2,"tagName":"meta","attributes":{"name":"theme-color","content":"#000000"},"childNodes":[],"id":12},{"type":3,"textContent":"\\n    ","id":13},{"type":2,"tagName":"meta","attributes":{"name":"description","content":"Web site created using create-react-app"},"childNodes":[],"id":14},{"type":3,"textContent":"\\n    ","id":15},{"type":2,"tagName":"link","attributes":{"rel":"apple-touch-icon","href":"http://localhost:3030/logo192.png"},"childNodes":[],"id":16},{"type":3,"textContent":"\\n    ","id":17},{"type":5,"textContent":"\\n      manifest.json provides metadata used when your web app is installed on a\\n      user\'s mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/\\n    ","id":18},{"type":3,"textContent":"\\n    ","id":19},{"type":2,"tagName":"link","attributes":{"rel":"manifest","href":"http://localhost:3030/manifest.json"},"childNodes":[],"id":20},{"type":3,"textContent":"\\n    ","id":21},{"type":5,"textContent":"\\n      Notice the use of  in the tags above.\\n      It will be replaced with the URL of the `public` folder during the build.\\n      Only files inside the `public` folder can be referenced from the HTML.\\n\\n      Unlike \\"/favicon.ico\\" or \\"favicon.ico\\", \\"/favicon.ico\\" will\\n      work correctly both with client-side routing and a non-root public URL.\\n      Learn how to configure a non-root public URL by running `npm run build`.\\n    ","id":22},{"type":3,"textContent":"\\n    ","id":23},{"type":2,"tagName":"title","attributes":{},"childNodes":[{"type":3,"textContent":"React App","id":25}],"id":24},{"type":3,"textContent":"\\n  ","id":26},{"type":2,"tagName":"script","attributes":{"defer":"","src":"http://localhost:3030/static/js/bundle.js"},"childNodes":[],"id":27},{"type":2,"tagName":"style","attributes":{},"childNodes":[{"type":3,"textContent":".replayer-wrapper { position: relative; }.replayer-mouse { position: absolute; width: 20px; height: 20px; transition: left 0.05s linear 0s, top 0.05s linear 0s; background-size: contain; background-position: 50% center; background-repeat: no-repeat; background-image: url(\\"data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjMwMCIgd2lkdGg9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBkYXRhLW5hbWU9IkxheWVyIDEiIHZpZXdCb3g9IjAgMCA1MCA1MCI+PHBhdGggZD0iTTQ4LjcxIDQyLjkxTDM0LjA4IDI4LjI5IDQ0LjMzIDE4YTEgMSAwIDAwLS4zMy0xLjYxTDIuMzUgMS4wNmExIDEgMCAwMC0xLjI5IDEuMjlMMTYuMzkgNDRhMSAxIDAgMDAxLjY1LjM2bDEwLjI1LTEwLjI4IDE0LjYyIDE0LjYzYTEgMSAwIDAwMS40MSAwbDQuMzgtNC4zOGExIDEgMCAwMC4wMS0xLjQyem0tNS4wOSAzLjY3TDI5IDMyYTEgMSAwIDAwLTEuNDEgMGwtOS44NSA5Ljg1TDMuNjkgMy42OWwzOC4xMiAxNEwzMiAyNy41OEExIDEgMCAwMDMyIDI5bDE0LjU5IDE0LjYyeiIvPjwvc3ZnPg==\\"); border-color: transparent; }.replayer-mouse::after { content: \\"\\"; display: inline-block; width: 20px; height: 20px; background: rgb(73, 80, 246); border-radius: 100%; transform: translate(-50%, -50%); opacity: 0.3; }.replayer-mouse.active::after { animation: 0.2s ease-in-out 0s 1 normal none running click; }.replayer-mouse.touch-device { background-image: none; width: 70px; height: 70px; border-radius: 100%; margin-left: -37px; margin-top: -37px; border: 4px solid rgba(73, 80, 246, 0); transition: left 0s linear 0s, top 0s linear 0s, border-color 0.2s ease-in-out 0s; }.replayer-mouse.touch-device.touch-active { border-color: rgb(73, 80, 246); transition: left 0.25s linear 0s, top 0.25s linear 0s, border-color 0.2s ease-in-out 0s; }.replayer-mouse.touch-device::after { opacity: 0; }.replayer-mouse.touch-device.active::after { animation: 0.2s ease-in-out 0s 1 normal none running touch-click; }.replayer-mouse-tail { position: absolute; pointer-events: none; }@keyframes click { \\n  0% { opacity: 0.3; width: 20px; height: 20px; }\\n  50% { opacity: 0.5; width: 10px; height: 10px; }\\n}@keyframes touch-click { \\n  0% { opacity: 0; width: 20px; height: 20px; }\\n  50% { opacity: 0.5; width: 10px; height: 10px; }\\n}.rr-player { position: relative; background: white; float: left; border-radius: 5px; box-shadow: rgba(17, 16, 62, 0.12) 0px 24px 48px; }.rr-player__frame { overflow: hidden; }.replayer-wrapper { float: left; clear: both; transform-origin: left top; left: 50%; top: 50%; }.replayer-wrapper > iframe { border: none; }.rr-controller.svelte-19ke1iv.svelte-19ke1iv { width: 100%; height: 80px; background: rgb(255, 255, 255); display: flex; flex-direction: column; justify-content: space-around; align-items: center; border-radius: 0px 0px 5px 5px; }.rr-timeline.svelte-19ke1iv.svelte-19ke1iv { width: 80%; display: flex; align-items: center; }.rr-timeline__time.svelte-19ke1iv.svelte-19ke1iv { display: inline-block; width: 100px; text-align: center; color: rgb(17, 16, 62); }.rr-progress.svelte-19ke1iv.svelte-19ke1iv { flex: 1 1 0%; height: 12px; background: rgb(238, 238, 238); position: relative; border-radius: 3px; cursor: pointer; box-sizing: border-box; border-top: 4px solid rgb(255, 255, 255); border-bottom: 4px solid rgb(255, 255, 255); }.rr-progress.disabled.svelte-19ke1iv.svelte-19ke1iv { cursor: not-allowed; }.rr-progress__step.svelte-19ke1iv.svelte-19ke1iv { height: 100%; position: absolute; left: 0px; top: 0px; background: rgb(224, 225, 254); }.rr-progress__handler.svelte-19ke1iv.svelte-19ke1iv { width: 20px; height: 20px; border-radius: 10px; position: absolute; top: 2px; transform: translate(-50%, -50%); background: rgb(73, 80, 246); }.rr-controller__btns.svelte-19ke1iv.svelte-19ke1iv { display: flex; align-items: center; justify-content: center; font-size: 13px; }.rr-controller__btns.svelte-19ke1iv button.svelte-19ke1iv { width: 32px; height: 32px; display: flex; padding: 0px; align-items: center; justify-content: center; background: none; border: none; border-radius: 50%; cursor: pointer; }.rr-controller__btns.svelte-19ke1iv button.svelte-19ke1iv:active { background: rgb(224, 225, 254); }.rr-controller__btns.svelte-19ke1iv button.active.svelte-19ke1iv { color: rgb(255, 255, 255); background: rgb(73, 80, 246); }.rr-controller__btns.svelte-19ke1iv button.svelte-19ke1iv:disabled { cursor: not-allowed; }.switch.svelte-9brlez.svelte-9brlez.svelte-9brlez { height: 1em; display: flex; align-items: center; }.switch.disabled.svelte-9brlez.svelte-9brlez.svelte-9brlez { opacity: 0.5; }.label.svelte-9brlez.svelte-9brlez.svelte-9brlez { margin: 0px 8px; }.switch.svelte-9brlez input[type=\\"checkbox\\"].svelte-9brlez.svelte-9brlez { position: absolute; opacity: 0; }.switch.svelte-9brlez label.svelte-9brlez.svelte-9brlez { width: 2em; height: 1em; position: relative; cursor: pointer; display: block; }.switch.disabled.svelte-9brlez label.svelte-9brlez.svelte-9brlez { cursor: not-allowed; }.switch.svelte-9brlez label.svelte-9brlez.svelte-9brlez::before { content: \\"\\"; position: absolute; width: 2em; height: 1em; left: 0.1em; transition: background 0.1s ease 0s; background: rgba(73, 80, 246, 0.5); border-radius: 50px; }.switch.svelte-9brlez label.svelte-9brlez.svelte-9brlez::after { content: \\"\\"; position: absolute; width: 1em; height: 1em; border-radius: 50px; left: 0px; transition: all 0.2s ease 0s; box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 5px 0px; background: rgb(252, 255, 244); animation: 0.2s ease-out 0s 1 normal none running switch-off; z-index: 2; }.switch.svelte-9brlez input[type=\\"checkbox\\"].svelte-9brlez:checked + label.svelte-9brlez::before { background: rgb(73, 80, 246); }.switch.svelte-9brlez input[type=\\"checkbox\\"].svelte-9brlez:checked + label.svelte-9brlez::after { animation: 0.2s ease-out 0s 1 normal none running switch-on; left: 1.1em; }","isStyle":true,"id":29}],"id":28},{"type":2,"tagName":"style","attributes":{},"childNodes":[{"type":3,"textContent":".App { text-align: center; display: flex; }.App-logo { height: 40vmin; pointer-events: none; }.player-wrap { position: relative; width: 50%; flex: 0 0 50%; }.operation { position: absolute; right: 100px; bottom: 100px; }@media (prefers-reduced-motion: no-preference) {\\n  .App-logo { animation: 20s linear 0s infinite normal none running App-logo-spin; }\\n}.App-header { background-color: rgb(40, 44, 52); min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: calc(10px + 2vmin); color: white; }.App-link { color: rgb(97, 218, 251); }@keyframes App-logo-spin { \\n  0% { transform: rotate(0deg); }\\n  100% { transform: rotate(360deg); }\\n}","isStyle":true,"id":31}],"id":30}],"id":4},{"type":3,"textContent":"\\n  ","id":32},{"type":2,"tagName":"body","attributes":{},"childNodes":[{"type":3,"textContent":"\\n    ","id":34},{"type":2,"tagName":"noscript","attributes":{},"childNodes":[{"type":3,"textContent":"You need to enable JavaScript to run this app.","id":36}],"id":35},{"type":3,"textContent":"\\n    ","id":37},{"type":2,"tagName":"div","attributes":{"id":"root"},"childNodes":[{"type":2,"tagName":"div","attributes":{},"childNodes":[{"type":3,"textContent":"录制器","id":40},{"type":2,"tagName":"button","attributes":{},"childNodes":[{"type":3,"textContent":"录制","id":42}],"id":41},{"type":2,"tagName":"button","attributes":{},"childNodes":[{"type":3,"textContent":"结束","id":44}],"id":43}],"id":39}],"id":38},{"type":3,"textContent":"\\n    ","id":45},{"type":5,"textContent":"\\n      This HTML file is a template.\\n      If you open it directly in the browser, you will see an empty page.\\n\\n      You can add webfonts, meta tags, or analytics to this file.\\n      The build step will place the bundled scripts into the <body> tag.\\n\\n      To begin the development, run `npm start` or `yarn start`.\\n      To create a production bundle, use `npm run build` or `yarn build`.\\n    ","id":46},{"type":3,"textContent":"\\n  \\n\\n","id":47}],"id":33}],"id":3}],"id":1},"initialOffset":{"left":0,"top":0}},"timestamp":1659076467538},{"type":3,"data":{"source":1,"positions":[{"x":75,"y":27,"id":41,"timeOffset":0}]},"timestamp":1659076467549},{"type":3,"data":{"source":2,"type":1,"id":3,"x":328,"y":202},"timestamp":1659076467831},{"type":3,"data":{"source":2,"type":6,"id":41},"timestamp":1659076467831},{"type":3,"data":{"source":2,"type":0,"id":3,"x":328,"y":202},"timestamp":1659076467926},{"type":3,"data":{"source":2,"type":2,"id":3,"x":328,"y":202},"timestamp":1659076467926},{"type":3,"data":{"source":1,"positions":[{"x":83,"y":36,"id":3,"timeOffset":-446},{"x":149,"y":98,"id":3,"timeOffset":-389},{"x":287,"y":180,"id":3,"timeOffset":-333},{"x":329,"y":202,"id":3,"timeOffset":-101},{"x":350,"y":219,"id":3,"timeOffset":-45}]},"timestamp":1659076468050},{"type":3,"data":{"source":2,"type":1,"id":3,"x":622,"y":299},"timestamp":1659076468150},{"type":3,"data":{"source":2,"type":0,"id":3,"x":622,"y":299},"timestamp":1659076468254},{"type":3,"data":{"source":2,"type":2,"id":3,"x":622,"y":299},"timestamp":1659076468254},{"type":3,"data":{"source":2,"type":1,"id":3,"x":821,"y":294},"timestamp":1659076468414},{"type":3,"data":{"source":2,"type":0,"id":3,"x":821,"y":294},"timestamp":1659076468510},{"type":3,"data":{"source":2,"type":2,"id":3,"x":821,"y":294},"timestamp":1659076468511},{"type":3,"data":{"source":1,"positions":[{"x":449,"y":269,"id":3,"timeOffset":-488},{"x":601,"y":298,"id":3,"timeOffset":-433},{"x":622,"y":300,"id":3,"timeOffset":-289},{"x":675,"y":312,"id":3,"timeOffset":-232},{"x":795,"y":299,"id":3,"timeOffset":-177},{"x":820,"y":295,"id":3,"timeOffset":-16}]},"timestamp":1659076468550},{"type":3,"data":{"source":2,"type":1,"id":3,"x":588,"y":362},"timestamp":1659076468718},{"type":3,"data":{"source":2,"type":0,"id":3,"x":588,"y":362},"timestamp":1659076468814},{"type":3,"data":{"source":2,"type":2,"id":3,"x":588,"y":362},"timestamp":1659076468815},{"type":3,"data":{"source":2,"type":1,"id":3,"x":330,"y":229},"timestamp":1659076469045},{"type":3,"data":{"source":1,"positions":[{"x":756,"y":310,"id":3,"timeOffset":-461},{"x":610,"y":359,"id":3,"timeOffset":-404},{"x":588,"y":362,"id":3,"timeOffset":-204},{"x":547,"y":361,"id":3,"timeOffset":-149},{"x":440,"y":317,"id":3,"timeOffset":-93},{"x":341,"y":239,"id":3,"timeOffset":-37}]},"timestamp":1659076469050},{"type":3,"data":{"source":2,"type":0,"id":3,"x":330,"y":229},"timestamp":1659076469134},{"type":3,"data":{"source":2,"type":2,"id":3,"x":330,"y":229},"timestamp":1659076469135},{"type":3,"data":{"source":2,"type":1,"id":3,"x":553,"y":169},"timestamp":1659076469317},{"type":3,"data":{"source":2,"type":0,"id":3,"x":554,"y":170},"timestamp":1659076469414},{"type":3,"data":{"source":2,"type":2,"id":3,"x":554,"y":170},"timestamp":1659076469415},{"type":3,"data":{"source":1,"positions":[{"x":331,"y":229,"id":3,"timeOffset":-395},{"x":375,"y":220,"id":3,"timeOffset":-340},{"x":489,"y":183,"id":3,"timeOffset":-286},{"x":554,"y":170,"id":3,"timeOffset":-147},{"x":680,"y":188,"id":3,"timeOffset":-91},{"x":890,"y":188,"id":3,"timeOffset":-34}]},"timestamp":1659076469552},{"type":3,"data":{"source":2,"type":1,"id":3,"x":930,"y":185},"timestamp":1659076469558},{"type":3,"data":{"source":2,"type":0,"id":3,"x":930,"y":185},"timestamp":1659076469646},{"type":3,"data":{"source":2,"type":2,"id":3,"x":930,"y":185},"timestamp":1659076469647},{"type":3,"data":{"source":2,"type":1,"id":3,"x":940,"y":249},"timestamp":1659076469806},{"type":3,"data":{"source":2,"type":0,"id":3,"x":940,"y":249},"timestamp":1659076469895},{"type":3,"data":{"source":2,"type":2,"id":3,"x":940,"y":249},"timestamp":1659076469896},{"type":3,"data":{"source":1,"positions":[{"x":935,"y":186,"id":3,"timeOffset":-391},{"x":943,"y":218,"id":3,"timeOffset":-337},{"x":940,"y":249,"id":3,"timeOffset":-281},{"x":939,"y":249,"id":3,"timeOffset":-157},{"x":838,"y":233,"id":3,"timeOffset":-105},{"x":539,"y":209,"id":3,"timeOffset":-49}]},"timestamp":1659076470054},{"type":3,"data":{"source":2,"type":1,"id":3,"x":449,"y":186},"timestamp":1659076470070},{"type":3,"data":{"source":2,"type":0,"id":3,"x":449,"y":186},"timestamp":1659076470174},{"type":3,"data":{"source":2,"type":2,"id":3,"x":449,"y":186},"timestamp":1659076470174},{"type":3,"data":{"source":2,"type":1,"id":3,"x":236,"y":214},"timestamp":1659076470349},{"type":3,"data":{"source":2,"type":0,"id":3,"x":235,"y":216},"timestamp":1659076470430},{"type":3,"data":{"source":2,"type":2,"id":3,"x":235,"y":216},"timestamp":1659076470430},{"type":3,"data":{"source":1,"positions":[{"x":449,"y":186,"id":3,"timeOffset":-377},{"x":382,"y":186,"id":3,"timeOffset":-322},{"x":256,"y":208,"id":3,"timeOffset":-266},{"x":236,"y":215,"id":3,"timeOffset":-210},{"x":236,"y":215,"id":3,"timeOffset":-145},{"x":228,"y":223,"id":3,"timeOffset":-91},{"x":211,"y":240,"id":3,"timeOffset":-34}]},"timestamp":1659076470559},{"type":3,"data":{"source":2,"type":1,"id":3,"x":211,"y":240},"timestamp":1659076470574},{"type":3,"data":{"source":2,"type":0,"id":3,"x":211,"y":240},"timestamp":1659076470638},{"type":3,"data":{"source":2,"type":2,"id":3,"x":211,"y":240},"timestamp":1659076470638},{"type":3,"data":{"source":2,"type":1,"id":3,"x":336,"y":145},"timestamp":1659076470878},{"type":3,"data":{"source":1,"positions":[{"x":211,"y":240,"id":3,"timeOffset":-408},{"x":263,"y":227,"id":3,"timeOffset":-352},{"x":326,"y":177,"id":3,"timeOffset":-296},{"x":335,"y":152,"id":3,"timeOffset":-240},{"x":337,"y":147,"id":3,"timeOffset":-120},{"x":350,"y":183,"id":3,"timeOffset":-65},{"x":391,"y":259,"id":3,"timeOffset":-9}]},"timestamp":1659076471061},{"type":3,"data":{"source":1,"positions":[{"x":415,"y":287,"id":3,"timeOffset":-454},{"x":438,"y":287,"id":3,"timeOffset":-398},{"x":495,"y":245,"id":3,"timeOffset":-342},{"x":525,"y":200,"id":3,"timeOffset":-286},{"x":560,"y":159,"id":3,"timeOffset":-229},{"x":588,"y":148,"id":3,"timeOffset":-174},{"x":606,"y":151,"id":3,"timeOffset":-115},{"x":628,"y":182,"id":3,"timeOffset":-62},{"x":657,"y":252,"id":3,"timeOffset":-6}]},"timestamp":1659076471562},{"type":3,"data":{"source":1,"positions":[{"x":669,"y":299,"id":3,"timeOffset":-449},{"x":672,"y":301,"id":3,"timeOffset":-361},{"x":735,"y":267,"id":3,"timeOffset":-306},{"x":827,"y":220,"id":3,"timeOffset":-250},{"x":857,"y":212,"id":3,"timeOffset":-194},{"x":867,"y":212,"id":3,"timeOffset":-138},{"x":875,"y":215,"id":3,"timeOffset":-81},{"x":905,"y":259,"id":3,"timeOffset":-26}]},"timestamp":1659076472062},{"type":3,"data":{"source":1,"positions":[{"x":920,"y":283,"id":3,"timeOffset":-475},{"x":921,"y":284,"id":3,"timeOffset":-418},{"x":945,"y":273,"id":3,"timeOffset":-363},{"x":1000,"y":220,"id":3,"timeOffset":-306},{"x":1001,"y":195,"id":3,"timeOffset":-251}]},"timestamp":1659076472568},{"type":3,"data":{"source":2,"type":0,"id":3,"x":1001,"y":191},"timestamp":1659076472590},{"type":3,"data":{"source":2,"type":2,"id":3,"x":1001,"y":191},"timestamp":1659076472590},{"type":3,"data":{"source":1,"positions":[{"x":1001,"y":190,"id":3,"timeOffset":-439},{"x":892,"y":173,"id":3,"timeOffset":-384},{"x":517,"y":105,"id":3,"timeOffset":-328},{"x":365,"y":103,"id":3,"timeOffset":-272},{"x":282,"y":103,"id":3,"timeOffset":-216},{"x":216,"y":103,"id":3,"timeOffset":-160},{"x":162,"y":96,"id":3,"timeOffset":-104},{"x":156,"y":86,"id":3,"timeOffset":-48}]},"timestamp":1659076473069},{"type":3,"data":{"source":1,"positions":[{"x":118,"y":46,"id":3,"timeOffset":-495},{"x":100,"y":25,"id":43,"timeOffset":-432},{"x":105,"y":16,"id":43,"timeOffset":-376},{"x":112,"y":9,"id":43,"timeOffset":-310},{"x":115,"y":8,"id":43,"timeOffset":-256},{"x":119,"y":9,"id":43,"timeOffset":-183}]},"timestamp":1659076473573},{"type":3,"data":{"source":2,"type":1,"id":43,"x":122,"y":16},"timestamp":1659076473806},{"type":3,"data":{"source":2,"type":5,"id":43},"timestamp":1659076473807},{"type":3,"data":{"source":2,"type":0,"id":43,"x":122,"y":16},"timestamp":1659076473910},{"type":3,"data":{"source":2,"type":2,"id":43,"x":122,"y":16},"timestamp":1659076473911}]';
+  </script>
+  <script>
+    // 常量
+    var MyRrweb = {};
+    var MirrorDom = {};
+    var MyEvents = [];
+    var EventType = {
+      DomContentLoaded: 0,
+      Load: 1,
+      FullSnapshot: 2,
+      IncrementalSnapshot: 3,
+      Meta: 4,
+      Custom: 5,
+      Plugin: 6,
+      0: 'DomContentLoaded',
+      1: 'Load',
+      2: 'FullSnapshot',
+      3: 'IncrementalSnapshot',
+      4: 'Meta',
+      5: 'Custom',
+      6: 'Plugin',
+    };
+    var NodeType = {
+      Document: 0,
+      DocumentType: 1,
+      Element: 2,
+      Text: 3,
+      CDATA: 4,
+      Comment: 5,
+      '0': 'Document',
+      '1': 'DocumentType',
+      '2': 'Element',
+      '3': 'Text',
+      '4': 'CDATA',
+      '5': 'Comment',
+    }
+    var tagMap = {
+      script: 'noscript',
+      // camel case svg element tag names
+      altglyph: 'altGlyph',
+      altglyphdef: 'altGlyphDef',
+      altglyphitem: 'altGlyphItem',
+      animatecolor: 'animateColor',
+      animatemotion: 'animateMotion',
+      animatetransform: 'animateTransform',
+      clippath: 'clipPath',
+      feblend: 'feBlend',
+      fecolormatrix: 'feColorMatrix',
+      fecomponenttransfer: 'feComponentTransfer',
+      fecomposite: 'feComposite',
+      feconvolvematrix: 'feConvolveMatrix',
+      fediffuselighting: 'feDiffuseLighting',
+      fedisplacementmap: 'feDisplacementMap',
+      fedistantlight: 'feDistantLight',
+      fedropshadow: 'feDropShadow',
+      feflood: 'feFlood',
+      fefunca: 'feFuncA',
+      fefuncb: 'feFuncB',
+      fefuncg: 'feFuncG',
+      fefuncr: 'feFuncR',
+      fegaussianblur: 'feGaussianBlur',
+      feimage: 'feImage',
+      femerge: 'feMerge',
+      femergenode: 'feMergeNode',
+      femorphology: 'feMorphology',
+      feoffset: 'feOffset',
+      fepointlight: 'fePointLight',
+      fespecularlighting: 'feSpecularLighting',
+      fespotlight: 'feSpotLight',
+      fetile: 'feTile',
+      feturbulence: 'feTurbulence',
+      foreignobject: 'foreignObject',
+      glyphref: 'glyphRef',
+      lineargradient: 'linearGradient',
+      radialgradient: 'radialGradient',
+    };
+  </script>
+  <script>
+    // utils 函数
+    function getTagName(n) {
+      let tagName = tagMap[n.tagName] ? tagMap[n.tagName] : n.tagName;
+      if (tagName === 'link' && n.attributes._cssText) {
+        tagName = 'style';
+      }
+      return tagName;
+    }
+
+    function wrapEvent(e) {
+      MyEvents.push({
+        ...e,
+        timestamp: Date.now(),
+      })
+    }
+  </script>
+  <script>
+    // 主要功能函数
+    function setupDom() {
+      MyRrweb.wrapper = document.createElement('div');
+      MyRrweb.wrapper.classList.add('replayer-wrapper');
+      document.getElementById('RrwebPlayerRoot').appendChild(MyRrweb.wrapper);
+
+      MyRrweb.mouse = document.createElement('div');
+      MyRrweb.mouse.classList.add('replayer-mouse');
+      MyRrweb.wrapper.appendChild(MyRrweb.mouse);
+
+      MyRrweb.mouseTail = document.createElement('canvas');
+      MyRrweb.mouseTail.classList.add('replayer-mouse-tail');
+      MyRrweb.mouseTail.style.display = 'inherit';
+      MyRrweb.wrapper.appendChild(MyRrweb.mouseTail);
+
+      MyRrweb.iframe = document.createElement('iframe');
+      const attributes = ['allow-same-origin'];
+      attributes.push('allow-scripts');
+
+      // hide iframe before first meta event
+      // MyRrweb.iframe.style.display = 'none';
+      MyRrweb.iframe.setAttribute('sandbox', attributes.join(' '));
+      MyRrweb.wrapper.appendChild(MyRrweb.iframe);
+    }
+
+    // 根据序列化数据反向还原DOM
+    function buildNode(n) {
+      const doc = MyRrweb.iframe.contentDocument;
+      switch (n.type) {
+        case NodeType.Document:
+          return doc.implementation.createDocument(null, '', null);
+        case NodeType.DocumentType:
+          return doc.implementation.createDocumentType(
+            n.name || 'html',
+            n.publicId,
+            n.systemId,
+          );
+        case NodeType.Element: {
+          const tagName = getTagName(n);
+          let node;
+          if (n.isSVG) {
+            node = doc.createElementNS('http://www.w3.org/2000/svg', tagName);
+          } else {
+            node = doc.createElement(tagName);
+          }
+          for (const name in n.attributes) {
+            if (!Object.prototype.hasOwnProperty.call(n.attributes, name)) {
+              continue;
+            }
+            let value = n.attributes[name];
+            if (tagName === 'option' && name === 'selected' && value === false) {
+              // legacy fix (TODO: if `value === false` can be generated for other attrs,
+              // should we also omit those other attrs from build ?)
+              continue;
+            }
+            value =
+              typeof value === 'boolean' || typeof value === 'number' ? '' : value;
+            // attribute names start with rr_ are internal attributes added by rrweb
+            if (!name.startsWith('rr_')) {
+              const isTextarea = tagName === 'textarea' && name === 'value';
+              const isRemoteOrDynamicCss =
+                tagName === 'style' && name === '_cssText';
+              if (isTextarea || isRemoteOrDynamicCss) {
+                const child = doc.createTextNode(value);
+                // https://github.com/rrweb-io/rrweb/issues/112
+                for (const c of Array.from(node.childNodes)) {
+                  if (c.nodeType === node.TEXT_NODE) {
+                    node.removeChild(c);
+                  }
+                }
+                node.appendChild(child);
+                continue;
+              }
+
+              try {
+                if (n.isSVG && name === 'xlink:href') {
+                  node.setAttributeNS('http://www.w3.org/1999/xlink', name, value);
+                } else if (
+                  name === 'onload' ||
+                  name === 'onclick' ||
+                  name.substring(0, 7) === 'onmouse'
+                ) {
+                  // Rename some of the more common atttributes from https://www.w3schools.com/tags/ref_eventattributes.asp
+                  // as setting them triggers a console.error (which shows up despite the try/catch)
+                  // Assumption: these attributes are not used to css
+                  node.setAttribute('_' + name, value);
+                } else if (
+                  tagName === 'meta' &&
+                  n.attributes['http-equiv'] === 'Content-Security-Policy' &&
+                  name === 'content'
+                ) {
+                  // If CSP contains style-src and inline-style is disabled, there will be an error "Refused to apply inline style because it violates the following Content Security Policy directive: style-src '*'".
+                  // And the function insertStyleRules in rrweb replayer will throw an error "Uncaught TypeError: Cannot read property 'insertRule' of null".
+                  node.setAttribute('csp-content', value);
+                  continue;
+                } else if (
+                  tagName === 'link' &&
+                  n.attributes.rel === 'preload' &&
+                  n.attributes.as === 'script'
+                ) {
+                  // ignore
+                } else if (
+                  tagName === 'link' &&
+                  n.attributes.rel === 'prefetch' &&
+                  typeof n.attributes.href === 'string' &&
+                  n.attributes.href.endsWith('.js')
+                ) {
+                  // ignore
+                } else if (
+                  tagName === 'img' &&
+                  n.attributes.srcset &&
+                  n.attributes.rr_dataURL
+                ) {
+                  // backup original img srcset
+                  node.setAttribute(
+                    'rrweb-original-srcset',
+                    n.attributes.srcset,
+                  );
+                } else {
+                  node.setAttribute(name, value);
+                }
+              } catch (error) {
+                // skip invalid attribute
+              }
+            } else {
+              // handle internal attributes
+              if (tagName === 'canvas' && name === 'rr_dataURL') {
+                const image = document.createElement('img');
+                image.onload = () => {
+                  const ctx = node.getContext('2d');
+                  if (ctx) {
+                    ctx.drawImage(image, 0, 0, image.width, image.height);
+                  }
+                };
+                image.src = value;
+              } else if (tagName === 'img' && name === 'rr_dataURL') {
+                const image = node;
+                if (!image.currentSrc.startsWith('data:')) {
+                  // Backup original img src. It may not have been set yet.
+                  image.setAttribute(
+                    'rrweb-original-src',
+                    n.attributes.src,
+                  );
+                  image.src = value;
+                }
+              }
+
+              if (name === 'rr_width') {
+                (node).style.width = value;
+              } else if (name === 'rr_height') {
+                (node).style.height = value;
+              } else if (name === 'rr_mediaCurrentTime') {
+                (node).currentTime = n.attributes
+                  .rr_mediaCurrentTime;
+              } else if (name === 'rr_mediaState') {
+                switch (value) {
+                  case 'played':
+                    (node)
+                      .play()
+                      .catch((e) => console.warn('media playback error', e));
+                    break;
+                  case 'paused':
+                    (node).pause();
+                    break;
+                  default:
+                }
+              }
+            }
+          }
+
+          if (n.isShadowHost) {
+            /**
+             * Since node is newly rebuilt, it should be a normal element
+             * without shadowRoot.
+             * But if there are some weird situations that has defined
+             * custom element in the scope before we rebuild node, it may
+             * register the shadowRoot earlier.
+             * The logic in the 'else' block is just a try-my-best solution
+             * for the corner case, please let we know if it is wrong and
+             * we can remove it.
+             */
+            if (!node.shadowRoot) {
+              node.attachShadow({ mode: 'open' });
+            } else {
+              while (node.shadowRoot.firstChild) {
+                node.shadowRoot.removeChild(node.shadowRoot.firstChild);
+              }
+            }
+          }
+          return node;
+        }
+        case NodeType.Text:
+          return doc.createTextNode(n.textContent);
+        case NodeType.CDATA:
+          return doc.createCDATASection(n.textContent);
+        case NodeType.Comment:
+          return doc.createComment(n.textContent);
+        default:
+          return null;
+      }
+    }
+    function buildNodeWithSN(n) {
+      let node = buildNode(n);
+      if (!node) return;
+
+      // 处理 iframe 的根结点
+      if (n.type === NodeType.Document) {
+        // close before open to make sure document was closed
+        const doc = MyRrweb.iframe.contentDocument;
+        doc.close();
+        doc.open();
+        if (
+          n.childNodes &&
+          n.childNodes[0].type !== NodeType.DocumentType // there isn't one already defined
+        ) {
+          // Trigger compatMode in the iframe
+          // this is needed as document.createElement('iframe') otherwise inherits a CSS1Compat mode from the parent replayer environment
+          if (
+            n.childNodes[0].type === NodeType.Element &&
+            'xmlns' in n.childNodes[0].attributes &&
+            n.childNodes[0].attributes.xmlns === 'http://www.w3.org/1999/xhtml'
+          ) {
+            // might as well use an xhtml doctype if we've got an xhtml namespace
+            doc.write(
+              '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "">',
+            );
+          } else {
+            doc.write(
+              '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "">',
+            );
+          }
+        }
+        node = doc;
+      }
+
+      // 处理元素的子节点
+      if (n.childNodes) {
+        for (const childN of n.childNodes) {
+          const childNode = buildNodeWithSN(childN);
+          if (!childNode) {
+            console.warn('Failed to rebuild', childN);
+            continue;
+          }
+
+          if (childN.isShadow && node.shadowRoot) {
+            node.shadowRoot.appendChild(childNode);
+          } else {
+            node.appendChild(childNode);
+          }
+          MirrorDom[n.id] = node;
+        }
+      }
+
+      return node;
+    }
+    function drawMouseTail(positions, width, height) {
+      const config = {
+        duration: 500,
+        lineCap: 'round',
+        lineWidth: 3,
+        strokeStyle: 'red',
+      };
+
+      const tempPos = positions.slice();
+
+      const draw = () => {
+        const items = tempPos.shift()?.data?.positions;
+        const ctx = MyRrweb.mouseTail.getContext('2d');
+        ctx.clearRect(0, 0, width, height);
+        ctx.beginPath();
+        ctx.lineWidth = config.lineWidth;
+        ctx.lineCap = config.lineCap;
+        ctx.strokeStyle = config.strokeStyle;
+        ctx.moveTo(items[0].x, items[0].y);
+        items?.forEach((p) => ctx.lineTo(p.x, p.y));
+        ctx.stroke();
+
+        if (tempPos.length) {
+          setTimeout(() => {
+            draw();
+          }, config.duration);
+        }
+      };
+
+      draw();
+    }
+  </script>
+  <script>
+    const events = JSON.parse(window._eventsString);
+    console.log(112, events);
+
+    // 1. 创建一个最基础的播放器容器
+    setupDom();
+    const firstEvent = events[0];
+    MyRrweb.iframe.style.width = firstEvent.data.width + "px";
+    MyRrweb.iframe.style.height = firstEvent.data.height + "px";
+
+    MyRrweb.mouseTail.style.width = firstEvent.data.width + "px";
+    MyRrweb.mouseTail.style.height = firstEvent.data.height + "px";
+    MyRrweb.mouseTail.style.position = 'absolute';
+
+    // 2. 把 DOM 元素构建起来
+    buildNodeWithSN(events[1].data.node);
+
+    // 播放器部分
+    // 3. events => actionsFunction + 按照时间的关系执行 => 实现播放功能
+    const mouseEvent = events.filter(o => o.data.source === 1) // 鼠标事件
+    drawMouseTail(mouseEvent, firstEvent.data.width, firstEvent.data.height);
+  </script>
+</body>
+
+</html>
